@@ -1,0 +1,636 @@
+args not recognized: ['0.1']
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 479, in <module>
+    raise Exception("Unknown command line arguments")
+Exception: Unknown command line arguments
+args not recognized: ['0.3']
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 479, in <module>
+    raise Exception("Unknown command line arguments")
+Exception: Unknown command line arguments
+NumPy: 1.26.4
+PyTorch: 2.5.1
+SciPy: 1.14.0
+fatal: not a git repository (or any of the parent directories): .git
+peps-torch git ref: N/A
+/bin/sh: line 0: cd: /Users/haochen/peps_docker/tn-torch_dev/yast: No such file or directory
+fatal: not a git repository (or any of the parent directories): .git
+yast git ref: N/A
+MAINARGS
+bond_dim= 8
+chi= 192
+ctm_conv_crit= CSPEC
+energy_checkpoint= nonreentrant
+force_cpu= False
+grad_type= c4v
+instate= None
+instate_noise= 0.01
+ipeps_init_type= RANDOM
+j1= 1.0
+j2= 0.5
+obs_freq= -1
+omp_cores= 8
+opt_max_iter= 10
+opt_resume= None
+opt_resume_override_params= False
+out_prefix= tmp
+pattern= None
+seed= 123
+top_freq= -1
+top_n= 2
+u1_charges= [1, -1, 0, 2, -2, 0, 2, -2]
+u1_total_charge= 1
+yast_backend= torch
+GLOBALARGS
+cuda_mem_profile= False
+device= cpu
+dtype= float64
+offload_to_gpu= None
+tensor_io_format= legacy
+torch_dtype= torch.float64
+verbosity_oe= 0
+PEPSARGS
+build_dl= True
+build_dl_open= False
+quasi_gauge_max_iter= 1000000
+quasi_gauge_tol= 1e-08
+CTMARGS
+ad_decomp_reg= 1e-12
+conv_check_cpu= False
+ctm_absorb_normalization= inf
+ctm_conv_tol= 5e-11
+ctm_env_init_type= CTMRG
+ctm_force_dl= False
+ctm_logging= False
+ctm_max_iter= 5000
+ctm_move_sequence= [(0, -1), (-1, 0), (0, 1), (1, 0)]
+ctm_warmup_iter= -1
+dtype_rdm= DEFAULT
+fpcm_fpt_tol= 1e-08
+fpcm_freq= -1
+fpcm_init_iter= 0
+fpcm_isogauge_tol= 1e-14
+fwd_checkpoint_absorb= False
+fwd_checkpoint_c2x2= False
+fwd_checkpoint_halves= False
+fwd_checkpoint_loop_rdm= False
+fwd_checkpoint_move= nonreentrant
+fwd_checkpoint_projectors= False
+fwd_svds_thresh= 0.1
+projector_eps_multiplet= 1e-08
+projector_full_matrices= True
+projector_method= 4X4
+projector_multiplet_abstol= 1e-14
+projector_propack_extra_states= 1
+projector_rsvd_niter= 2
+projector_svd_method= GESDD
+projector_svd_reltol= 1e-08
+projector_svd_reltol_block= 0.0
+randomize_ctm_move_sequence= False
+verbosity_ctm_convergence= 0
+verbosity_ctm_move= 0
+verbosity_fpcm_move= 0
+verbosity_initialization= 0
+verbosity_projectors= 0
+verbosity_rdm= 0
+OPTARGS
+dampening= 0.0
+env_sens_regauge= False
+env_sens_scale= 10.0
+fd_ctm_reinit= True
+fd_eps= 0.0001
+history_size= 100
+line_search= strong_wolfe
+line_search_ctm_reinit= True
+line_search_svd_method= DEFAULT
+line_search_tol= 1e-08
+lr= 1.0
+max_iter_per_epoch= 1
+momentum= 0.0
+opt_ctm_reinit= True
+opt_log_grad= False
+opt_logging= True
+tolerance_change= 1e-09
+tolerance_grad= 1e-09
+verbosity_opt_epoch= 1
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 480, in <module>
+    main()
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 123, in main
+    raise ValueError("Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= "\
+ValueError: Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= RANDOM is not supported
+NumPy: 1.26.4
+PyTorch: 2.5.1
+SciPy: 1.14.0
+fatal: not a git repository (or any of the parent directories): .git
+peps-torch git ref: N/A
+/bin/sh: line 0: cd: /Users/haochen/peps_docker/tn-torch_dev/yast: No such file or directory
+fatal: not a git repository (or any of the parent directories): .git
+yast git ref: N/A
+MAINARGS
+bond_dim= 8
+chi= 192
+ctm_conv_crit= CSPEC
+energy_checkpoint= nonreentrant
+force_cpu= False
+grad_type= c4v
+instate= None
+instate_noise= 0.01
+ipeps_init_type= RANDOM
+j1= 1.0
+j2= 0.5
+obs_freq= -1
+omp_cores= 8
+opt_max_iter= 10
+opt_resume= None
+opt_resume_override_params= False
+out_prefix= tmp
+pattern= None
+seed= 123
+top_freq= -1
+top_n= 2
+u1_charges= [1, -1, 0, 2, -2, 0, 2, -2]
+u1_total_charge= 1
+yast_backend= torch
+GLOBALARGS
+cuda_mem_profile= False
+device= cpu
+dtype= float64
+offload_to_gpu= None
+tensor_io_format= legacy
+torch_dtype= torch.float64
+verbosity_oe= 0
+PEPSARGS
+build_dl= True
+build_dl_open= False
+quasi_gauge_max_iter= 1000000
+quasi_gauge_tol= 1e-08
+CTMARGS
+ad_decomp_reg= 1e-12
+conv_check_cpu= False
+ctm_absorb_normalization= inf
+ctm_conv_tol= 5e-11
+ctm_env_init_type= CTMRG
+ctm_force_dl= False
+ctm_logging= False
+ctm_max_iter= 5000
+ctm_move_sequence= [(0, -1), (-1, 0), (0, 1), (1, 0)]
+ctm_warmup_iter= -1
+dtype_rdm= DEFAULT
+fpcm_fpt_tol= 1e-08
+fpcm_freq= -1
+fpcm_init_iter= 0
+fpcm_isogauge_tol= 1e-14
+fwd_checkpoint_absorb= False
+fwd_checkpoint_c2x2= False
+fwd_checkpoint_halves= False
+fwd_checkpoint_loop_rdm= False
+fwd_checkpoint_move= nonreentrant
+fwd_checkpoint_projectors= False
+fwd_svds_thresh= 0.1
+projector_eps_multiplet= 1e-08
+projector_full_matrices= True
+projector_method= 4X4
+projector_multiplet_abstol= 1e-14
+projector_propack_extra_states= 1
+projector_rsvd_niter= 2
+projector_svd_method= GESDD
+projector_svd_reltol= 1e-08
+projector_svd_reltol_block= 0.0
+randomize_ctm_move_sequence= False
+verbosity_ctm_convergence= 0
+verbosity_ctm_move= 0
+verbosity_fpcm_move= 0
+verbosity_initialization= 0
+verbosity_projectors= 0
+verbosity_rdm= 0
+OPTARGS
+dampening= 0.0
+env_sens_regauge= False
+env_sens_scale= 10.0
+fd_ctm_reinit= True
+fd_eps= 0.0001
+history_size= 100
+line_search= strong_wolfe
+line_search_ctm_reinit= True
+line_search_svd_method= DEFAULT
+line_search_tol= 1e-08
+lr= 1.0
+max_iter_per_epoch= 1
+momentum= 0.0
+opt_ctm_reinit= False
+opt_log_grad= False
+opt_logging= True
+tolerance_change= 1e-09
+tolerance_grad= 1e-09
+verbosity_opt_epoch= 1
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 480, in <module>
+    main()
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 123, in main
+    raise ValueError("Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= "\
+ValueError: Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= RANDOM is not supported
+NumPy: 1.26.4
+PyTorch: 2.5.1
+SciPy: 1.14.0
+fatal: not a git repository (or any of the parent directories): .git
+peps-torch git ref: N/A
+/bin/sh: line 0: cd: /Users/haochen/peps_docker/tn-torch_dev/yast: No such file or directory
+fatal: not a git repository (or any of the parent directories): .git
+yast git ref: N/A
+MAINARGS
+bond_dim= 8
+chi= 192
+ctm_conv_crit= CSPEC
+energy_checkpoint= nonreentrant
+force_cpu= False
+grad_type= c4v
+instate= None
+instate_noise= 0.01
+ipeps_init_type= RANDOM
+j1= 1.0
+j2= 0.5
+obs_freq= -1
+omp_cores= 8
+opt_max_iter= 10
+opt_resume= None
+opt_resume_override_params= False
+out_prefix= tmp
+pattern= None
+seed= 123
+top_freq= -1
+top_n= 2
+u1_charges= [1, -1, 0, 2, -2, 0, 2, -2]
+u1_total_charge= 1
+yast_backend= torch
+GLOBALARGS
+cuda_mem_profile= False
+device= cpu
+dtype= float64
+offload_to_gpu= None
+tensor_io_format= legacy
+torch_dtype= torch.float64
+verbosity_oe= 0
+PEPSARGS
+build_dl= True
+build_dl_open= False
+quasi_gauge_max_iter= 1000000
+quasi_gauge_tol= 1e-08
+CTMARGS
+ad_decomp_reg= 1e-12
+conv_check_cpu= False
+ctm_absorb_normalization= inf
+ctm_conv_tol= 5e-11
+ctm_env_init_type= CTMRG
+ctm_force_dl= False
+ctm_logging= False
+ctm_max_iter= 5000
+ctm_move_sequence= [(0, -1), (-1, 0), (0, 1), (1, 0)]
+ctm_warmup_iter= -1
+dtype_rdm= DEFAULT
+fpcm_fpt_tol= 1e-08
+fpcm_freq= -1
+fpcm_init_iter= 0
+fpcm_isogauge_tol= 1e-14
+fwd_checkpoint_absorb= False
+fwd_checkpoint_c2x2= False
+fwd_checkpoint_halves= False
+fwd_checkpoint_loop_rdm= False
+fwd_checkpoint_move= nonreentrant
+fwd_checkpoint_projectors= False
+fwd_svds_thresh= 0.1
+projector_eps_multiplet= 1e-08
+projector_full_matrices= True
+projector_method= 4X4
+projector_multiplet_abstol= 1e-14
+projector_propack_extra_states= 1
+projector_rsvd_niter= 2
+projector_svd_method= GESDD
+projector_svd_reltol= 1e-08
+projector_svd_reltol_block= 0.0
+randomize_ctm_move_sequence= False
+verbosity_ctm_convergence= 0
+verbosity_ctm_move= 0
+verbosity_fpcm_move= 0
+verbosity_initialization= 0
+verbosity_projectors= 0
+verbosity_rdm= 0
+OPTARGS
+dampening= 0.0
+env_sens_regauge= False
+env_sens_scale= 10.0
+fd_ctm_reinit= True
+fd_eps= 0.0001
+history_size= 100
+line_search= strong_wolfe
+line_search_ctm_reinit= True
+line_search_svd_method= DEFAULT
+line_search_tol= 1e-08
+lr= 1.0
+max_iter_per_epoch= 1
+momentum= 0.0
+opt_ctm_reinit= False
+opt_log_grad= False
+opt_logging= True
+tolerance_change= 1e-09
+tolerance_grad= 1e-09
+verbosity_opt_epoch= 1
+None [1, -1, 0, 2, -2, 0, 2, -2]
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 481, in <module>
+    main()
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 124, in main
+    raise ValueError("Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= "\
+ValueError: Missing trial state: (--instate=None or empty --u1_charges) and --ipeps_init_type= RANDOM is not supported
+NumPy: 1.26.4
+PyTorch: 2.5.1
+SciPy: 1.14.0
+fatal: not a git repository (or any of the parent directories): .git
+peps-torch git ref: N/A
+/bin/sh: line 0: cd: /Users/haochen/peps_docker/tn-torch_dev/yast: No such file or directory
+fatal: not a git repository (or any of the parent directories): .git
+yast git ref: N/A
+MAINARGS
+bond_dim= 6
+chi= 192
+ctm_conv_crit= CSPEC
+energy_checkpoint= nonreentrant
+force_cpu= False
+grad_type= c4v
+instate= None
+instate_noise= 0.01
+ipeps_init_type= RANDOM
+j1= 1.0
+j2= 0.5
+obs_freq= -1
+omp_cores= 8
+opt_max_iter= 10
+opt_resume= None
+opt_resume_override_params= False
+out_prefix= tmp
+pattern= None
+seed= 123
+top_freq= -1
+top_n= 2
+u1_charges= [1, -1, 0, 2, -2, 0, 2, -2]
+u1_total_charge= 1
+yast_backend= torch
+GLOBALARGS
+cuda_mem_profile= False
+device= cpu
+dtype= float64
+offload_to_gpu= None
+tensor_io_format= legacy
+torch_dtype= torch.float64
+verbosity_oe= 0
+PEPSARGS
+build_dl= True
+build_dl_open= False
+quasi_gauge_max_iter= 1000000
+quasi_gauge_tol= 1e-08
+CTMARGS
+ad_decomp_reg= 1e-12
+conv_check_cpu= False
+ctm_absorb_normalization= inf
+ctm_conv_tol= 5e-11
+ctm_env_init_type= CTMRG
+ctm_force_dl= False
+ctm_logging= False
+ctm_max_iter= 5000
+ctm_move_sequence= [(0, -1), (-1, 0), (0, 1), (1, 0)]
+ctm_warmup_iter= -1
+dtype_rdm= DEFAULT
+fpcm_fpt_tol= 1e-08
+fpcm_freq= -1
+fpcm_init_iter= 0
+fpcm_isogauge_tol= 1e-14
+fwd_checkpoint_absorb= False
+fwd_checkpoint_c2x2= False
+fwd_checkpoint_halves= False
+fwd_checkpoint_loop_rdm= False
+fwd_checkpoint_move= nonreentrant
+fwd_checkpoint_projectors= False
+fwd_svds_thresh= 0.1
+projector_eps_multiplet= 1e-08
+projector_full_matrices= True
+projector_method= 4X4
+projector_multiplet_abstol= 1e-14
+projector_propack_extra_states= 1
+projector_rsvd_niter= 2
+projector_svd_method= GESDD
+projector_svd_reltol= 1e-08
+projector_svd_reltol_block= 0.0
+randomize_ctm_move_sequence= False
+verbosity_ctm_convergence= 0
+verbosity_ctm_move= 0
+verbosity_fpcm_move= 0
+verbosity_initialization= 0
+verbosity_projectors= 0
+verbosity_rdm= 0
+OPTARGS
+dampening= 0.0
+env_sens_regauge= False
+env_sens_scale= 10.0
+fd_ctm_reinit= True
+fd_eps= 0.0001
+history_size= 100
+line_search= strong_wolfe
+line_search_ctm_reinit= True
+line_search_svd_method= DEFAULT
+line_search_tol= 1e-08
+lr= 1.0
+max_iter_per_epoch= 1
+momentum= 0.0
+opt_ctm_reinit= False
+opt_log_grad= False
+opt_logging= True
+tolerance_change= 1e-09
+tolerance_grad= 1e-09
+verbosity_opt_epoch= 1
+lX x lY: 1 x 1
+A0 (0, 0): torch.Size([93])
+y\x -3  -2  -1  0  1  2  
+-3 A0 A0 A0 A0 A0 A0 
+-2 A0 A0 A0 A0 A0 A0 
+-1 A0 A0 A0 A0 A0 A0 
++0 A0 A0 A0 A0 A0 A0 
++1 A0 A0 A0 A0 A0 A0 
++2 A0 A0 A0 A0 A0 A0 
+{'abelian_charges': [1, -1, 0, 2, -2, 0, 2, -2], 'total_abelian_charge': 1}
+0 {'meta': {'pg': 'A_1'}}
+1 {'meta': {'pg': 'A_1'}}
+2 {'meta': {'pg': 'A_1'}}
+3 {'meta': {'pg': 'A_1'}}
+4 {'meta': {'pg': 'A_1'}}
+5 {'meta': {'pg': 'A_1'}}
+6 {'meta': {'pg': 'A_1'}}
+7 {'meta': {'pg': 'A_1'}}
+8 {'meta': {'pg': 'A_1'}}
+9 {'meta': {'pg': 'A_1'}}
+10 {'meta': {'pg': 'A_1'}}
+11 {'meta': {'pg': 'A_1'}}
+12 {'meta': {'pg': 'A_1'}}
+13 {'meta': {'pg': 'A_1'}}
+14 {'meta': {'pg': 'A_1'}}
+15 {'meta': {'pg': 'A_1'}}
+16 {'meta': {'pg': 'A_1'}}
+17 {'meta': {'pg': 'A_1'}}
+18 {'meta': {'pg': 'A_1'}}
+19 {'meta': {'pg': 'A_1'}}
+20 {'meta': {'pg': 'A_1'}}
+21 {'meta': {'pg': 'A_1'}}
+22 {'meta': {'pg': 'A_1'}}
+23 {'meta': {'pg': 'A_1'}}
+24 {'meta': {'pg': 'A_1'}}
+25 {'meta': {'pg': 'A_1'}}
+26 {'meta': {'pg': 'A_1'}}
+27 {'meta': {'pg': 'A_1'}}
+28 {'meta': {'pg': 'A_1'}}
+29 {'meta': {'pg': 'A_1'}}
+30 {'meta': {'pg': 'A_1'}}
+31 {'meta': {'pg': 'A_1'}}
+32 {'meta': {'pg': 'A_1'}}
+33 {'meta': {'pg': 'A_1'}}
+34 {'meta': {'pg': 'A_1'}}
+35 {'meta': {'pg': 'A_1'}}
+36 {'meta': {'pg': 'A_1'}}
+37 {'meta': {'pg': 'A_1'}}
+38 {'meta': {'pg': 'A_1'}}
+39 {'meta': {'pg': 'A_1'}}
+40 {'meta': {'pg': 'A_1'}}
+41 {'meta': {'pg': 'A_1'}}
+42 {'meta': {'pg': 'A_1'}}
+43 {'meta': {'pg': 'A_1'}}
+44 {'meta': {'pg': 'A_1'}}
+45 {'meta': {'pg': 'A_1'}}
+46 {'meta': {'pg': 'A_1'}}
+47 {'meta': {'pg': 'A_1'}}
+48 {'meta': {'pg': 'A_1'}}
+49 {'meta': {'pg': 'A_1'}}
+50 {'meta': {'pg': 'A_1'}}
+51 {'meta': {'pg': 'A_1'}}
+52 {'meta': {'pg': 'A_1'}}
+53 {'meta': {'pg': 'A_1'}}
+54 {'meta': {'pg': 'A_1'}}
+55 {'meta': {'pg': 'A_1'}}
+56 {'meta': {'pg': 'A_1'}}
+57 {'meta': {'pg': 'A_1'}}
+58 {'meta': {'pg': 'A_1'}}
+59 {'meta': {'pg': 'A_1'}}
+60 {'meta': {'pg': 'A_1'}}
+61 {'meta': {'pg': 'A_1'}}
+62 {'meta': {'pg': 'A_1'}}
+63 {'meta': {'pg': 'A_1'}}
+64 {'meta': {'pg': 'A_1'}}
+65 {'meta': {'pg': 'A_1'}}
+66 {'meta': {'pg': 'A_1'}}
+67 {'meta': {'pg': 'A_1'}}
+68 {'meta': {'pg': 'A_1'}}
+69 {'meta': {'pg': 'A_1'}}
+70 {'meta': {'pg': 'A_1'}}
+71 {'meta': {'pg': 'A_1'}}
+72 {'meta': {'pg': 'A_1'}}
+73 {'meta': {'pg': 'A_1'}}
+74 {'meta': {'pg': 'A_1'}}
+75 {'meta': {'pg': 'A_1'}}
+76 {'meta': {'pg': 'A_1'}}
+77 {'meta': {'pg': 'A_1'}}
+78 {'meta': {'pg': 'A_1'}}
+79 {'meta': {'pg': 'A_1'}}
+80 {'meta': {'pg': 'A_1'}}
+81 {'meta': {'pg': 'A_1'}}
+82 {'meta': {'pg': 'A_1'}}
+83 {'meta': {'pg': 'A_1'}}
+84 {'meta': {'pg': 'A_1'}}
+85 {'meta': {'pg': 'A_1'}}
+86 {'meta': {'pg': 'A_1'}}
+87 {'meta': {'pg': 'A_1'}}
+88 {'meta': {'pg': 'A_1'}}
+89 {'meta': {'pg': 'A_1'}}
+90 {'meta': {'pg': 'A_1'}}
+91 {'meta': {'pg': 'A_1'}}
+92 {'meta': {'pg': 'A_1'}}
+x: 0, y: 0
+['0.368895870664273', '0.013365949855291825', '0.5917800383018739', '0.09263931233897627', '0.472451921042887', '0.5220316791666796', '0.6050827078458633', '0.5312960527869689', '0.9485464763406578', '0.05667562533261972', '0.8285744797310848', '0.09380308349175259', '0.19596254575695027', '0.22033581483610876', '0.19462613768691917', '0.41458350743866934', '0.7430684281621825', '0.3251963060982157', '0.6172064363146677', '0.18290158646749954', '0.2531701554205409', '0.6363146267341485', '0.6844986630899367', '0.3761579311985588', '0.5640508733796821', '0.4198463700872944', '0.9431716794020806', '0.4831062481464736', '0.5263528766609595', '0.23909414577291022', '0.6309102902433571', '0.22000123404596061', '0.40693768210721903', '0.06708247856247129', '0.10043958525013097', '0.5109734010056018', '0.16747081297812672', '0.6610096423164555', '0.6397240217987901', '0.7615082093563338', '0.855645927634572', '0.7864762795207276', '0.8006660925430252', '0.5640815178217452', '0.2011470397466073', '0.9325900597233528', '0.25417113089169807', '0.4264398731403024', '0.9055297073653519', '0.20798719002866672', '0.04750894589048604', '0.3459562290803949', '0.0671392835154222', '0.29927655859863356', '0.9803357170855289', '0.8393823341350485', '0.061486096035006765', '0.30395692318405343', '0.9356132830638041', '0.34495232427020717', '0.7546278325468558', '0.9980487046493506', '0.8023697235654182', '0.7631800318059978', '0.11731251495965112', '0.3833424162704675', '0.02244896464781687', '0.02874430672468331', '0.768621680410482', '0.3918586789598961', '0.019234428823885374', '0.14934452061650316', '0.6058826060565949', '0.556688305993042', '0.032615412257937515', '0.39649215215850175', '0.2960703407308195', '0.5493575481382373', '0.4884108370955923', '0.4444771330558296', '0.8336398657106', '0.15515180099935255', '0.37690602225113434', '0.5707794967193895', '0.6713403963913017', '0.7401569897612574', '0.9502241100999883', '0.27532397809099485', '0.16501444824920275', '0.4842741723833569', '0.7556798728556913', '0.4941825886414726', '0.9136417570221513']
+
+
+
+epoch, loss, avg_m
+Traceback (most recent call last):
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 480, in <module>
+    main()
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 474, in main
+    optimize_state(state, None, loss_fn, obs_fn=obs_fn)
+  File "/Users/haochen/peps_docker/tn-torch_dev/optim/ad_optim_lbfgs_mod.py", line 304, in optimize_state
+    _, new_loss, new_flat_grad = optimizer.step_2c(closure, closure_linesearch, new_loss=new_loss, new_flat_grad=new_flat_grad)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/optim/lbfgs_modified.py", line 169, in step_2c
+    orig_loss = closure()
+                ^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/optim/ad_optim_lbfgs_mod.py", line 183, in closure
+    loss, ctm_env, history, *timings = loss_fn(state, current_env[0], context)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/examples/j1j2/abelian/optim_j1j2_c4v_u1_lc_yastn.py", line 311, in loss_c4v
+    ctm_env_out, converged, conv_history, t_ctm, t_check= ctmrg(ctm_env_in, _ctm_conv_f,  options_svd,
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/ctm/generic/env_yastn.py", line 148, in ctmrg
+    ctm_out_info= next(ctm_itr)
+                  ^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/envs/_env_ctm_c4v.py", line 344, in _iterate_ctmrg_
+    current_proj= env.update_(opts_svd=opts_svd, method=method, proj_history=proj_history, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/envs/_env_ctm_c4v.py", line 278, in update_
+    outputs= checkpoint_F(f_update_core_2dir,None,inputs_meta,*inputs_t,\
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/backend/backend_torch.py", line 516, in checkpoint
+    return _checkpoint(f, *args, use_reentrant=kwargs.pop('use_reentrant',None),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 632, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/utils/checkpoint.py", line 496, in checkpoint
+    ret = function(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/envs/_env_ctm_c4v.py", line 259, in f_update_core_2dir
+    env_tmp, proj_tmp= _update_core_dir(loc_env, "default", opts_svd, method=method, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/envs/_env_ctm_c4v.py", line 491, in _update_core_dir
+    tmp = tensordot(tmp, DoublePepsTensor(bra=_b_sublattice, ket=_b_sublattice), axes=((0, 2), (1, 0)))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tensor/_contractions.py", line 71, in tensordot
+    return b.tensordot(a, axes=axes, reverse=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/_doublePepsTensor.py", line 205, in tensordot
+    return append_vec_tl(Ab, Ak, b, op=self.op, mode=mode, in_b=in_b, out_a=out_a)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tn/fpeps/envs/_env_auxlliary.py", line 306, in append_vec_tl
+    vectl = vectl.fuse_legs(axes=((0, 3), 2, (1, 4)))  # [t l] [x y] [t' l']
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tensor/_merging.py", line 278, in fuse_legs
+    return _fuse_legs_hard(c, axes, order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tensor/_merging.py", line 285, in _fuse_legs_hard
+    data = _transpose_and_merge(a.config, a._data, order, struct, slices, meta_mrg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/tensor/_merging.py", line 88, in _transpose_and_merge
+    return config.backend.transpose_and_merge(data, order, meta_new, meta_mrg, struct.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/backend/backend_torch.py", line 472, in transpose_and_merge
+    return kernel_transpose_and_merge.apply(data, order, meta_new, meta_mrg, Dsize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/torch_peps/lib/python3.11/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/haochen/peps_docker/tn-torch_dev/yastn/yastn/backend/_backend_torch_backwards.py", line 340, in forward
+    temp[slcs] = data[slice(*slo)].reshape(Do).permute(order).reshape(Drsh)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

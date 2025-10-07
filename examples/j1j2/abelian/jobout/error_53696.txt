@@ -1,0 +1,1 @@
+slurmstepd: error: *** JOB 53696 ON turpancomp0 CANCELLED AT 2025-08-23T22:17:59 ***

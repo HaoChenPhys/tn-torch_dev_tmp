@@ -1,0 +1,250 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          DEBUG_GH_CONTEXT_EVENT: ${{ toJson(github.event_name) }}
+          DEBUG_GH_CONTEXT_BASE_REF: ${{ toJson(github.base_ref) }}
+        run: echo "$DEBUG_GH_CONTEXT_EVENT $DEBUG_GH_CONTEXT_BASE_REF"
+
+  # runs basic tests on numpy backend. Dependency for job test-full
+  test-basic:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+
+    steps:
+      - run: CI=false
+      - uses: actions/checkout@v4
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libblas-dev liblapack-dev gfortran
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: setup deps
+        run: |
+            pip install ".[test]";
+            pip install flake8 pylint;
+
+      - name: static analysis flake8
+        run: |
+            flake8 . --count --select=E9,F63,F7,F82 --ignore=F821 --show-source --statistics;
+            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics;
+
+      - name: static analysis py_lint
+        continue-on-error: true
+        run: pylint -d C0301,C0103,W0212 ./yastn/
+
+      # Run tests
+      - name: tests
+        run: |
+          pytest -v;
+          pytest -v --tensordot_policy fuse_contracted ./tests/tensor;
+          pytest -v --tensordot_policy no_fusion ./tests/tensor;
+  
+  # runs basic tests on torch backend. 
+  test-basic-torch-peps:
+    if: |
+      contains(fromJson('["refs/heads/tests", "refs/heads/feat_fp_refactor", "refs/heads/feat_fp_tests2"]'), github.ref) ||
+      ( github.event_name == 'pull_request' && contains(fromJson('["master",]'), github.base_ref) )
+    
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+
+    steps:
+      - run: CI=false
+      - uses: actions/checkout@v4
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libblas-dev liblapack-dev gfortran
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      
+      - name: setup deps
+        run: |
+          pip install flake8 pylint;
+          pip install numpy scipy primme
+          pip install .[io,test]
+
+      - name: setup pytorch
+        run: |
+            pip install torch==2.7 --index-url https://download.pytorch.org/whl/cpu
+      
+      - name: static analysis flake8
+        run: |
+            flake8 . --count --select=E9,F63,F7,F82 --ignore=F821 --show-source --statistics;
+            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics;
+
+      - name: static analysis py_lint
+        continue-on-error: true
+        run: pylint -d C0301,C0103,W0212 ./yastn/
+
+      # Run tests
+      - name: tests
+        run: |
+          pytest -v --backend torch --tensordot_policy fuse_contracted ./tests/tensor;
+          pytest -v --backend torch --tensordot_policy no_fusion ./tests/tensor;
+          pytest -v --backend torch ./tests/peps
+
+  deploy-docs:
+    if: contains(fromJson('["refs/heads/master","refs/heads/docs"]'), github.ref)
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/docs.yml
+    with:
+      python-version: '3.12'
+
+  # run matrix of tests for python and torch versions
+  test-full:
+    needs: test-basic
+    if: |
+      contains(fromJson('["refs/heads/master", "refs/heads/tests"]'), github.ref) ||
+      ( github.event_name == 'pull_request' && contains(fromJson('["master",]'), github.base_ref) )
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - backend: np
+            python_v: '3.9'
+            numpy_v: '1.21.6'
+            scipy_v: '1.11.4'
+            torch_v: 'none'
+            primme_v: '3.2.3'
+          - backend: torch
+            python_v: '3.9'
+            numpy_v: '1.26.4'
+            scipy_v: '1.13.1'
+            torch_v: '2.4'
+            primme_v: '3.2.3'
+          - backend: torch
+            python_v: '3.12'
+            numpy_v: '2.0.1'
+            scipy_v: '1.14.1'
+            torch_v: '2.5.1'
+            primme_v: '3.2.3'
+      fail-fast: false
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - run: CI=false
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      # - name: Run a one-line script
+      # run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libblas-dev liblapack-dev gfortran
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python_v }}
+
+      - name: setup deps
+        run: |
+          pip install numpy==${{ matrix.numpy_v }};
+          pip install scipy==${{ matrix.scipy_v }};
+          pip install primme==${{ matrix.primme_v }};
+          pip install .[io,test]
+
+      - name: setup pytorch
+        if: matrix.backend == 'torch'
+        run: |
+            pip install torch==${{ matrix.torch_v }} --index-url https://download.pytorch.org/whl/cpu
+
+      # Run tests
+      - name: tests
+        run: |
+          pytest -v --backend ${{ matrix.backend }};
+          pytest -v --backend ${{ matrix.backend }} --tensordot_policy fuse_contracted ./tests/tensor;
+          pytest -v --backend ${{ matrix.backend }} --tensordot_policy no_fusion ./tests/tensor;
+
+
+  test-full-coverage:
+    needs: [test-basic, test-full]
+    if: contains(fromJson('["refs/heads/master", "refs/heads/tests"]'), github.ref)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - python_v: '3.12'
+            numpy_v: '1.26'
+            scipy_v: '1.14'
+            torch_v: '2.4'
+            primme_v: '3.2.3'
+      fail-fast: true
+
+    steps:
+      - run: CI=false
+      - uses: actions/checkout@v4
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libblas-dev liblapack-dev gfortran
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python_v }}
+
+      - name: setup deps
+        run: |
+          pip install numpy==${{ matrix.numpy_v }};
+          pip install scipy==${{ matrix.scipy_v }};
+          pip install torch==${{ matrix.torch_v }} --index-url https://download.pytorch.org/whl/cpu;
+          pip install primme==${{ matrix.primme_v }};
+          pip install .[io,test]
+
+      - name: Run tests and collect coverage
+        run: |
+          pytest -v --cov=yastn --cov-report=xml --backend np;
+          pytest -v --cov=yastn --cov-report=xml --backend np --tensordot_policy fuse_contracted --cov-append ./tests/tensor;
+          pytest -v --cov=yastn --cov-report=xml --backend np --tensordot_policy no_fusion --cov-append ./tests/tensor;
+          pytest -v --cov=yastn --cov-report=xml --backend torch --cov-append ./tests/tensor;
+          pytest -v --cov=yastn --cov-report=xml --backend torch --tensordot_policy no_fusion --cov-append ./tests/tensor;
+
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v4.2.0
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
