@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# -------- new: positional args + CUDA_VISIBLE_DEVICES -------------
+cuda_index="${1:-0}"   # default to GPU 0 if not provided
+j2_val="${2:-0.5}"     # default to 0.5 if not provided
+export CUDA_VISIBLE_DEVICES="${cuda_index}"
+
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 tot_D=6
@@ -35,7 +40,7 @@ instate="None"
 out_prefix="tmp"
 
 python -u optim_j1j2_c4v_u1_lc_yastn.py --grad_type='c4v' \
-    --j1 1.0 --j2 0.5 \
+    --j1 1.0 --j2 "${j2_val}" \
     --bond_dim "$tot_D" --u1_charges 1 -1 0 2 -2 0 2 -2 --u1_total_charge 1 \
     --OPTARGS_tolerance_grad $grad_tol  --CTMARGS_ctm_conv_tol $ctm_conv_tol \
     --CTMARGS_ctm_max_iter 5000 --chi=$chi --seed "$seed" --omp_cores "$omp_cores" --CTMARGS_projector_svd_method "$policy"\
@@ -48,7 +53,6 @@ python -u optim_j1j2_c4v_u1_lc_yastn.py --grad_type='c4v' \
     --instate_noise 0.01  --opt_max_iter 10 \
     >> "${out_prefix}.out" 2>&1
 # --instate="$instate"
-
 # --energy_checkpoint nonreentrant\
 
 # D=10: {-2:3, 0:4, 2:3} tot=1
